@@ -1,0 +1,26 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+/* Fondo de chat de WhatsApp */
+.chat-bg {
+    background-color: #E5DDD5;
+    background-image: url("data:image/svg+xml,%3Csvg width='600' height='600' viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23999289' fill-opacity='0.1'%3E%3Cpath d='M360 0c-4.418 0-8 3.582-8 8v584c0 4.418 3.582 8 8 8h1c4.418 0 8-3.582 8-8V8c0-4.418-3.582-8-8-8h-1zM240 0c-4.418 0-8 3.582-8 8v584c0 4.418 3.582 8 8 8h1c4.418 0 8-3.582 8-8V8c0-4.418-3.582-8-8-8h-1zM120 0c-4.418 0-8 3.582-8 8v584c0 4.418 3.582 8 8 8h1c4.418 0 8-3.582 8-8V8c0-4.418-3.582-8-8-8h-1zM480 0c-4.418 0-8 3.582-8 8v584c0 4.418 3.582 8 8 8h1c4.418 0 8-3.582 8-8V8c0-4.418-3.582-8-8-8h-1zM0 360c0-4.418 3.582-8 8-8h584c4.418 0 8 3.582 8 8v1c0 4.418-3.582 8-8 8H8c-4.418 0-8-3.582-8-8v-1zM0 240c0-4.418 3.582-8 8-8h584c4.418 0 8 3.582 8 8v1c0 4.418-3.582 8-8 8H8c-4.418 0-8-3.582-8-8v-1zM0 120c0-4.418 3.582-8 8-8h584c4.418 0 8 3.582 8 8v1c0 4.418-3.582 8-8 8H8c-4.418 0-8-3.582-8-8v-1zM0 480c0-4.418 3.582-8 8-8h584c4.418 0 8 3.582 8 8v1c0 4.418-3.582 8-8 8H8c-4.418 0-8-3.582-8-8v-1z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+/* Animación para que aparezcan los mensajes */
+.message-pop-in {
+    animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-origin: bottom left;
+}
+.message-pop-in.sent {
+    transform-origin: bottom right;
+}
+@keyframes popIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
