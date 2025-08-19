@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- ELEMENTOS DEL DOM ---
     const chatWindow = document.getElementById('chat-window');
     const startButton = document.getElementById('start-chat-button');
+    const startButtonSpan = startButton ? startButton.querySelector('span') : null;
 
     // --- LÓGICA DEL JUEGO ---
 
@@ -72,7 +73,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
         startButton.disabled = true;
         startButton.classList.add('opacity-50', 'cursor-not-allowed');
-        startButton.querySelector('span').textContent = 'Generando chat...';
+        if (startButtonSpan) {
+            startButtonSpan.textContent = 'Generando chat...';
+        } else {
+            startButton.textContent = 'Generando chat...';
+        }
 
         chatWindow.innerHTML = ''; 
 
@@ -121,7 +126,11 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
             startButton.disabled = false;
             startButton.classList.remove('opacity-50', 'cursor-not-allowed');
-            startButton.querySelector('span').textContent = "¡Mandar 'Padel hoy'!";
+            if (startButtonSpan) {
+                startButtonSpan.textContent = "¡Mandar 'Padel hoy'!";
+            } else {
+                startButton.textContent = "¡Mandar 'Padel hoy'!";
+            }
         }, delay + 500);
     }
 
